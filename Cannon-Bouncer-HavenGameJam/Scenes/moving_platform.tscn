@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dqxhfdrkkdyrs"]
+
+[sub_resource type="Curve2D" id="Curve2D_myvba"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 690, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk15n"]
+size = Vector2(100, 25)
+
+[sub_resource type="Animation" id="Animation_5a8oa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3ntyy"]
+resource_name = "moving"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7huqf"]
+_data = {
+&"RESET": SubResource("Animation_5a8oa"),
+&"moving": SubResource("Animation_3ntyy")
+}
+
+[node name="MovingPlatform" type="Path2D" unique_id=2039460716]
+curve = SubResource("Curve2D_myvba")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1464455091]
+rotation = -0.003745301
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=1627426785]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=265563187]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=1950050218]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1555084268]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wk15n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=333635900]
+libraries/ = SubResource("AnimationLibrary_7huqf")
+autoplay = &"moving"

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://4xrsh2w66myu"]
+
+[ext_resource type="PackedScene" uid="uid://bsrh3vdfwgqym" path="res://Scenes/player.tscn" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://bheytuoky3tau" path="res://Scenes/spike.tscn" id="2_smnlx"]
+[ext_resource type="PackedScene" uid="uid://cbpyn103vcwjp" path="res://Scenes/escape_door.tscn" id="3_12fag"]
+[ext_resource type="PackedScene" uid="uid://dqxhfdrkkdyrs" path="res://Scenes/moving_platform.tscn" id="4_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://c1fd6h6e3djd0" path="res://Scenes/level_3.tscn" id="4_cggpd"]
+[ext_resource type="PackedScene" uid="uid://besfbbjai6tg1" path="res://Scenes/Saw.tscn" id="5_v36qu"]
+[ext_resource type="PackedScene" uid="uid://dyqd653ucu6g" path="res://Scenes/kill_box.tscn" id="7_055b2"]
+[ext_resource type="AudioStream" uid="uid://da52r5p2eqbhq" path="res://Assets/arpmedia-retro-arcade-game-music-577821.mp3" id="8_2mgoq"]
+
+[sub_resource type="Curve2D" id="Curve2D_cggpd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 268, -2)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32i32"]
+size = Vector2(102, 27)
+
+[node name="Level2" type="Node2D" unique_id=322077045]
+
+[node name="Player" parent="." unique_id=832507766 groups=["player"] instance=ExtResource("1_v3rpw")]
+position = Vector2(-373, -13)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=335643394]
+position = Vector2(-200, -1.8189894e-12)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=976383059]
+scale = Vector2(0.25914046, 0.2849292)
+polygon = PackedVector2Array(-2600.906, -1442.4636, -2604.765, 1884.6787, 5641.728, 1884.6787, 5641.728, -1316.1165, 3422.854, -1316.1165, 3426.7131, 129.85683, 1678.6263, 133.36647, 1678.6263, 1010.7774, 528.67084, 1010.7774, 528.67084, 133.36647, -918.4208, 129.85683, -918.4208, -1445.9733)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=1384696213]
+scale = Vector2(0.25, 0.25)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2350, -1650, -950, -1650, -950, 150, 550, 150, 550, 1150, 1744, 1152, 1740, 152, 3550, 150, 3550, -1500, 5850, -1500, 5850, 2150, -2700, 2150, -2700, -1650)
+
+[node name="Spike" parent="StaticBody2D" unique_id=1668228773 instance=ExtResource("2_smnlx")]
+position = Vector2(152, 275)
+
+[node name="Spike2" parent="StaticBody2D" unique_id=347430633 instance=ExtResource("2_smnlx")]
+position = Vector2(182, 275)
+
+[node name="Spike3" parent="StaticBody2D" unique_id=2093466640 instance=ExtResource("2_smnlx")]
+position = Vector2(212, 275)
+
+[node name="Spike4" parent="StaticBody2D" unique_id=637373990 instance=ExtResource("2_smnlx")]
+position = Vector2(242, 275)
+
+[node name="Spike5" parent="StaticBody2D" unique_id=1771749855 instance=ExtResource("2_smnlx")]
+position = Vector2(272, 275)
+
+[node name="Spike6" parent="StaticBody2D" unique_id=1927053286 instance=ExtResource("2_smnlx")]
+position = Vector2(302, 275)
+
+[node name="Spike7" parent="StaticBody2D" unique_id=1325743198 instance=ExtResource("2_smnlx")]
+position = Vector2(332, 275)
+
+[node name="Spike8" parent="StaticBody2D" unique_id=1839531584 instance=ExtResource("2_smnlx")]
+position = Vector2(362, 275)
+
+[node name="Spike9" parent="StaticBody2D" unique_id=1113346000 instance=ExtResource("2_smnlx")]
+position = Vector2(392, 275)
+
+[node name="Spike10" parent="StaticBody2D" unique_id=238280896 instance=ExtResource("2_smnlx")]
+position = Vector2(421, 275)
+
+[node name="EscapeDoor" parent="." unique_id=1283603974 instance=ExtResource("3_12fag")]
+position = Vector2(1143, -443)
+target_scene = ExtResource("4_cggpd")
+
+[node name="MovingPlatform" parent="." unique_id=407529235 instance=ExtResource("4_1q6tm")]
+position = Vector2(360, -161)
+curve = SubResource("Curve2D_cggpd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2050107786]
+position = Vector2(625, -348)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=294777103]
+offset_right = 102.0
+offset_bottom = 27.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1490557208]
+position = Vector2(51, 13.5)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="Spike" parent="." unique_id=1079229931 instance=ExtResource("5_v36qu")]
+position = Vector2(439, -323)
+
+[node name="Spike2" parent="." unique_id=326125356 instance=ExtResource("5_v36qu")]
+position = Vector2(471, -323)
+
+[node name="Spike3" parent="." unique_id=219669505 instance=ExtResource("5_v36qu")]
+position = Vector2(410, -323)
+
+[node name="KillBox" parent="." unique_id=1719539855 instance=ExtResource("7_055b2")]
+position = Vector2(35, 1015)
+scale = Vector2(530.4237, 54.283367)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1959710219]
+stream = ExtResource("8_2mgoq")
+autoplay = true
+parameters/looping = false

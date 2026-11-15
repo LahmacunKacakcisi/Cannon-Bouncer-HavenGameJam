@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dqoikc3llmmhq"]
+
+[node name="Control" type="Control" unique_id=1009088740]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=297852770]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.291
+anchor_bottom = 0.38000003
+offset_right = -185.232
+offset_bottom = -185.24002
+scale = Vector2(19.418789, 17.795086)
+text = "aaaaaa"

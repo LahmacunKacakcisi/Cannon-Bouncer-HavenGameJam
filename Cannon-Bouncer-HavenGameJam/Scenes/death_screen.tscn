@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ub5oixqc80hw"]
+
+[ext_resource type="Script" uid="uid://8tre1dypikit" path="res://Scripts/death_screen.gd" id="1_8hps1"]
+
+[node name="DeathScreen" type="Node2D" unique_id=7816861]
+script = ExtResource("1_8hps1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=852591034]
+zoom = Vector2(2, 2)
+
+[node name="UI" type="Control" parent="Camera2D" unique_id=1323289831]
+layout_mode = 3
+anchor_left = -1.558
+anchor_right = -1.558
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/UI" unique_id=841809975]
+layout_mode = 0
+offset_left = -511.0
+offset_top = -313.0
+offset_right = 507.0
+offset_bottom = 293.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/UI" unique_id=1536175153]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -401.0
+offset_top = -255.0
+offset_right = 542.4214
+offset_bottom = 284.4579
+scale = Vector2(0.87382877, 0.78969574)
+bbcode_enabled = true
+text = "[font_size=200]You Died!"
+
+[node name="Button" type="Button" parent="Camera2D/UI" unique_id=2024697621]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 109.0
+offset_right = 72.0
+offset_bottom = 140.0
+text = "Press to Respawn"
+
+[connection signal="pressed" from="Camera2D/UI/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccthg4ysu4kjx"
+path="res://.godot/imported/14. Welcome to the Green Room (DELTARUNE Chapter 3+4 Soundtrack) - Toby Fox.mp3-cb2e5cba967dfe8b3cfef80acd8be659.mp3str"
+
+[deps]
+
+source_file="res://Assets/14. Welcome to the Green Room (DELTARUNE Chapter 3+4 Soundtrack) - Toby Fox.mp3"
+dest_files=["res://.godot/imported/14. Welcome to the Green Room (DELTARUNE Chapter 3+4 Soundtrack) - Toby Fox.mp3-cb2e5cba967dfe8b3cfef80acd8be659.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

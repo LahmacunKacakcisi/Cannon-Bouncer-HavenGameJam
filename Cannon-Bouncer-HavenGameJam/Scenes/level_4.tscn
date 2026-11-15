@@ -1,0 +1,407 @@
+[gd_scene format=3 uid="uid://2cib3f4rpqlc"]
+
+[ext_resource type="PackedScene" uid="uid://bsrh3vdfwgqym" path="res://Scenes/player.tscn" id="1_i1va2"]
+[ext_resource type="PackedScene" uid="uid://besfbbjai6tg1" path="res://Scenes/Saw.tscn" id="2_5eaas"]
+[ext_resource type="PackedScene" uid="uid://cbpyn103vcwjp" path="res://Scenes/escape_door.tscn" id="3_kdkq3"]
+[ext_resource type="PackedScene" uid="uid://ckrkvnv7mdffr" path="res://Scenes/end.tscn" id="4_f6i20"]
+[ext_resource type="PackedScene" uid="uid://dyqd653ucu6g" path="res://Scenes/kill_box.tscn" id="4_wi344"]
+[ext_resource type="AudioStream" uid="uid://da52r5p2eqbhq" path="res://Assets/arpmedia-retro-arcade-game-music-577821.mp3" id="6_dvrgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6ww4"]
+size = Vector2(40, 40)
+
+[sub_resource type="Curve2D" id="Curve2D_5eaas"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -217, 0, 0, 0, 0, 358, -215)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6rc"]
+size = Vector2(100, 25)
+
+[sub_resource type="Animation" id="Animation_53xsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5e78q"]
+resource_name = "moving"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4wr6"]
+_data = {
+&"RESET": SubResource("Animation_53xsp"),
+&"moving": SubResource("Animation_5e78q")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_kdkq3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -322)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wi344"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, -374)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk15n"]
+size = Vector2(100, 25)
+
+[sub_resource type="Animation" id="Animation_5a8oa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3ntyy"]
+resource_name = "moving"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7huqf"]
+_data = {
+&"RESET": SubResource("Animation_5a8oa"),
+&"moving": SubResource("Animation_3ntyy")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_f6i20"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -654)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_myvba"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 690, 0)
+}
+point_count = 2
+
+[node name="Level4" type="Node2D" unique_id=868747825]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=996737246]
+position = Vector2(0, 202)
+scale = Vector2(3.4000025, 10.12)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=964001832]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=477422165]
+shape = SubResource("RectangleShape2D_l6ww4")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=339782076]
+position = Vector2(445.99994, -763)
+scale = Vector2(6.4127817, -0.4510055)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3" unique_id=1030602276]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1514629703]
+shape = SubResource("RectangleShape2D_l6ww4")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=40037103]
+position = Vector2(650, -833)
+scale = Vector2(3.4000025, 0.64000225)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D5" unique_id=1638777172]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=171751957]
+shape = SubResource("RectangleShape2D_l6ww4")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=39323032]
+position = Vector2(550, -795)
+scale = Vector2(1.9824528, 2.4977057)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4" unique_id=921946884]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=58061477]
+shape = SubResource("RectangleShape2D_l6ww4")
+
+[node name="Player" parent="." unique_id=832507766 groups=["player"] instance=ExtResource("1_i1va2")]
+position = Vector2(-0.00012207031, -18.999878)
+scale = Vector2(1.029624, 1.0218843)
+
+[node name="MovingPlatform" type="Path2D" parent="." unique_id=2039460716]
+position = Vector2(312, 31)
+curve = SubResource("Curve2D_5eaas")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform" unique_id=1464455091]
+rotation = -1.5754046
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform/PathFollow2D" unique_id=1627426785]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform" unique_id=265563187]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform/AnimatableBody2D" unique_id=1950050218]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D" unique_id=1555084268]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_qf6rc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform" unique_id=333635900]
+libraries/ = SubResource("AnimationLibrary_l4wr6")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="MovingPlatform2" type="Path2D" parent="." unique_id=748073960]
+position = Vector2(793, -35)
+curve = SubResource("Curve2D_kdkq3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform2" unique_id=1525994668]
+rotation = -1.5676907
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform2/PathFollow2D" unique_id=294099547]
+remote_path = NodePath("../../Saw")
+update_rotation = false
+update_scale = false
+
+[node name="Saw" parent="MovingPlatform2" unique_id=1079229931 instance=ExtResource("2_5eaas")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform2" unique_id=358716295]
+libraries/ = SubResource("AnimationLibrary_l4wr6")
+autoplay = &"moving"
+speed_scale = 0.8
+movie_quit_on_finish = true
+
+[node name="MovingPlatform" type="Path2D" parent="MovingPlatform2" unique_id=259530476]
+position = Vector2(270, 102)
+curve = SubResource("Curve2D_wi344")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform2/MovingPlatform" unique_id=106759668]
+rotation = -1.5788175
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform2/MovingPlatform/PathFollow2D" unique_id=356509668]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform2/MovingPlatform" unique_id=1449742276]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform2/MovingPlatform/AnimatableBody2D" unique_id=1614036926]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform2/MovingPlatform/AnimatableBody2D" unique_id=540575656]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wk15n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform2/MovingPlatform" unique_id=551039667]
+libraries/ = SubResource("AnimationLibrary_7huqf")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="MovingPlatform2" type="Path2D" parent="MovingPlatform2" unique_id=95760001]
+position = Vector2(405, -551)
+rotation = 3.1415927
+curve = SubResource("Curve2D_f6i20")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform2/MovingPlatform2" unique_id=2070387621]
+rotation = -1.5723253
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform2/MovingPlatform2/PathFollow2D" unique_id=1746594058]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform2/MovingPlatform2" unique_id=1595098067]
+scale = Vector2(1.0000006, 1.0000006)
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform2/MovingPlatform2/AnimatableBody2D" unique_id=1000772169]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform2/MovingPlatform2/AnimatableBody2D" unique_id=404798427]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wk15n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform2/MovingPlatform2" unique_id=1206004181]
+libraries/ = SubResource("AnimationLibrary_7huqf")
+autoplay = &"moving"
+speed_scale = 0.8
+
+[node name="MovingPlatform3" type="Path2D" parent="." unique_id=1945277344]
+position = Vector2(394, -617)
+curve = SubResource("Curve2D_myvba")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform3" unique_id=1035880926]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform3/PathFollow2D" unique_id=1945555362]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform3" unique_id=1864263195]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform3/AnimatableBody2D" unique_id=1761380938]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform3/AnimatableBody2D" unique_id=1723785029]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wk15n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform3" unique_id=71093515]
+libraries/ = SubResource("AnimationLibrary_7huqf")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="EscapeDoor" parent="." unique_id=1283603974 instance=ExtResource("3_kdkq3")]
+position = Vector2(650.00006, -1125)
+target_scene = ExtResource("4_f6i20")
+
+[node name="Saw" parent="." unique_id=2139613480 instance=ExtResource("2_5eaas")]
+position = Vector2(756, -853)
+
+[node name="Saw2" parent="." unique_id=347732124 instance=ExtResource("2_5eaas")]
+position = Vector2(793, -853)
+
+[node name="Saw3" parent="." unique_id=183468065 instance=ExtResource("2_5eaas")]
+position = Vector2(827, -852)
+
+[node name="KillBox" parent="." unique_id=1719539855 instance=ExtResource("4_wi344")]
+position = Vector2(321, 666)
+scale = Vector2(452.9718, -25.22762)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=756885071]
+stream = ExtResource("6_dvrgg")
+autoplay = true
+parameters/looping = false

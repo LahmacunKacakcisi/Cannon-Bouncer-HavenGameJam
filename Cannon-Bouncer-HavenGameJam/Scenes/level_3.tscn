@@ -1,0 +1,661 @@
+[gd_scene format=3 uid="uid://c1fd6h6e3djd0"]
+
+[ext_resource type="PackedScene" uid="uid://bsrh3vdfwgqym" path="res://Scenes/player.tscn" id="1_ng0s0"]
+[ext_resource type="PackedScene" uid="uid://bheytuoky3tau" path="res://Scenes/spike.tscn" id="2_g5cw1"]
+[ext_resource type="PackedScene" uid="uid://dqxhfdrkkdyrs" path="res://Scenes/moving_platform.tscn" id="3_76ybr"]
+[ext_resource type="PackedScene" uid="uid://bxppmplke58qp" path="res://Scenes/ice.tscn" id="4_vwg62"]
+[ext_resource type="PackedScene" uid="uid://besfbbjai6tg1" path="res://Scenes/Saw.tscn" id="5_qf6rc"]
+[ext_resource type="PackedScene" uid="uid://cbpyn103vcwjp" path="res://Scenes/escape_door.tscn" id="6_qf6rc"]
+[ext_resource type="PackedScene" uid="uid://2cib3f4rpqlc" path="res://Scenes/level_4.tscn" id="7_53xsp"]
+[ext_resource type="PackedScene" uid="uid://dyqd653ucu6g" path="res://Scenes/kill_box.tscn" id="8_5e78q"]
+[ext_resource type="AudioStream" uid="uid://da52r5p2eqbhq" path="res://Assets/arpmedia-retro-arcade-game-music-577821.mp3" id="9_l4wr6"]
+
+[sub_resource type="Curve2D" id="Curve2D_myvba"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 337, 2)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_76ybr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 388, -440)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32i32"]
+size = Vector2(100, 25)
+
+[sub_resource type="Animation" id="Animation_vvyo4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_anqd2"]
+resource_name = "moving"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tdwu5"]
+_data = {
+&"RESET": SubResource("Animation_vvyo4"),
+&"moving": SubResource("Animation_anqd2")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjtu1"]
+size = Vector2(40, 40)
+
+[sub_resource type="Curve2D" id="Curve2D_5e78q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 5)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6rc"]
+size = Vector2(100, 25)
+
+[sub_resource type="Animation" id="Animation_53xsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5e78q"]
+resource_name = "moving"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4wr6"]
+_data = {
+&"RESET": SubResource("Animation_53xsp"),
+&"moving": SubResource("Animation_5e78q")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_53xsp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -309)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qf6rc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -18, -400, 0, 0, 0, 0, -25, 4)
+}
+point_count = 2
+
+[node name="Level3" type="Node2D" unique_id=1341176236]
+
+[node name="Player" parent="." unique_id=832507766 groups=["player"] instance=ExtResource("1_ng0s0")]
+position = Vector2(-184, -30)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1659765925]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=307544887]
+polygon = PackedVector2Array(-395, -533, -899, -534, -900, 446, 2380, 445, 2385, -873, 1743, -878, 1744, -793, 2265, -791, 2263, 368, 77, 368, 77, 0, -395, -1)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=1501115184]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-899, -535, -394, -535, -395, 2, 78, 1, 78, 368, 2263, 368, 2264, -791, 1744, -791, 1744, -878, 2268, -876, 2385, -874, 2386, 452, -903, 450)
+
+[node name="Spike" parent="StaticBody2D" unique_id=1079229931 instance=ExtResource("2_g5cw1")]
+position = Vector2(94, 356)
+
+[node name="Spike2" parent="StaticBody2D" unique_id=158233214 instance=ExtResource("2_g5cw1")]
+position = Vector2(124, 356)
+
+[node name="Spike3" parent="StaticBody2D" unique_id=409189227 instance=ExtResource("2_g5cw1")]
+position = Vector2(154, 356)
+
+[node name="Spike4" parent="StaticBody2D" unique_id=1463757273 instance=ExtResource("2_g5cw1")]
+position = Vector2(184, 356)
+
+[node name="Spike5" parent="StaticBody2D" unique_id=129182887 instance=ExtResource("2_g5cw1")]
+position = Vector2(214, 356)
+
+[node name="Spike6" parent="StaticBody2D" unique_id=250230908 instance=ExtResource("2_g5cw1")]
+position = Vector2(244, 356)
+
+[node name="Spike7" parent="StaticBody2D" unique_id=728012240 instance=ExtResource("2_g5cw1")]
+position = Vector2(274, 356)
+
+[node name="Spike8" parent="StaticBody2D" unique_id=907210532 instance=ExtResource("2_g5cw1")]
+position = Vector2(304, 356)
+
+[node name="Spike9" parent="StaticBody2D" unique_id=2104223296 instance=ExtResource("2_g5cw1")]
+position = Vector2(320, 356)
+
+[node name="Spike10" parent="StaticBody2D" unique_id=728466690 instance=ExtResource("2_g5cw1")]
+position = Vector2(350, 356)
+
+[node name="Spike11" parent="StaticBody2D" unique_id=1310721445 instance=ExtResource("2_g5cw1")]
+position = Vector2(380, 356)
+
+[node name="Spike12" parent="StaticBody2D" unique_id=1374364652 instance=ExtResource("2_g5cw1")]
+position = Vector2(410, 356)
+
+[node name="Spike13" parent="StaticBody2D" unique_id=1612034844 instance=ExtResource("2_g5cw1")]
+position = Vector2(440, 356)
+
+[node name="Spike14" parent="StaticBody2D" unique_id=967043171 instance=ExtResource("2_g5cw1")]
+position = Vector2(470, 356)
+
+[node name="Spike15" parent="StaticBody2D" unique_id=1070590933 instance=ExtResource("2_g5cw1")]
+position = Vector2(500, 356)
+
+[node name="Spike16" parent="StaticBody2D" unique_id=1120091835 instance=ExtResource("2_g5cw1")]
+position = Vector2(530, 356)
+
+[node name="Spike17" parent="StaticBody2D" unique_id=1963798302 instance=ExtResource("2_g5cw1")]
+position = Vector2(559, 357)
+
+[node name="Spike18" parent="StaticBody2D" unique_id=693574510 instance=ExtResource("2_g5cw1")]
+position = Vector2(589, 357)
+
+[node name="Spike19" parent="StaticBody2D" unique_id=104841520 instance=ExtResource("2_g5cw1")]
+position = Vector2(619, 357)
+
+[node name="Spike20" parent="StaticBody2D" unique_id=1602800968 instance=ExtResource("2_g5cw1")]
+position = Vector2(649, 357)
+
+[node name="Spike21" parent="StaticBody2D" unique_id=1797462996 instance=ExtResource("2_g5cw1")]
+position = Vector2(679, 357)
+
+[node name="Spike22" parent="StaticBody2D" unique_id=1312872100 instance=ExtResource("2_g5cw1")]
+position = Vector2(709, 357)
+
+[node name="Spike23" parent="StaticBody2D" unique_id=244702929 instance=ExtResource("2_g5cw1")]
+position = Vector2(739, 357)
+
+[node name="Spike24" parent="StaticBody2D" unique_id=911715148 instance=ExtResource("2_g5cw1")]
+position = Vector2(769, 357)
+
+[node name="Spike25" parent="StaticBody2D" unique_id=1580314735 instance=ExtResource("2_g5cw1")]
+position = Vector2(785, 357)
+
+[node name="Spike26" parent="StaticBody2D" unique_id=1227908807 instance=ExtResource("2_g5cw1")]
+position = Vector2(815, 357)
+
+[node name="Spike27" parent="StaticBody2D" unique_id=134113803 instance=ExtResource("2_g5cw1")]
+position = Vector2(845, 357)
+
+[node name="Spike28" parent="StaticBody2D" unique_id=2018105811 instance=ExtResource("2_g5cw1")]
+position = Vector2(875, 357)
+
+[node name="Spike29" parent="StaticBody2D" unique_id=1893890455 instance=ExtResource("2_g5cw1")]
+position = Vector2(905, 357)
+
+[node name="Spike30" parent="StaticBody2D" unique_id=1274272920 instance=ExtResource("2_g5cw1")]
+position = Vector2(935, 357)
+
+[node name="Spike31" parent="StaticBody2D" unique_id=353067696 instance=ExtResource("2_g5cw1")]
+position = Vector2(965, 357)
+
+[node name="Spike32" parent="StaticBody2D" unique_id=2138238570 instance=ExtResource("2_g5cw1")]
+position = Vector2(995, 357)
+
+[node name="Spike33" parent="StaticBody2D" unique_id=1502572676 instance=ExtResource("2_g5cw1")]
+position = Vector2(1011, 356)
+
+[node name="Spike34" parent="StaticBody2D" unique_id=1941119525 instance=ExtResource("2_g5cw1")]
+position = Vector2(1041, 356)
+
+[node name="Spike35" parent="StaticBody2D" unique_id=1528396813 instance=ExtResource("2_g5cw1")]
+position = Vector2(1071, 356)
+
+[node name="Spike36" parent="StaticBody2D" unique_id=485179005 instance=ExtResource("2_g5cw1")]
+position = Vector2(1101, 356)
+
+[node name="Spike37" parent="StaticBody2D" unique_id=1664006641 instance=ExtResource("2_g5cw1")]
+position = Vector2(1131, 356)
+
+[node name="Spike38" parent="StaticBody2D" unique_id=1273249438 instance=ExtResource("2_g5cw1")]
+position = Vector2(1161, 356)
+
+[node name="Spike39" parent="StaticBody2D" unique_id=78263872 instance=ExtResource("2_g5cw1")]
+position = Vector2(1191, 356)
+
+[node name="Spike40" parent="StaticBody2D" unique_id=1983318868 instance=ExtResource("2_g5cw1")]
+position = Vector2(1221, 356)
+
+[node name="Spike41" parent="StaticBody2D" unique_id=1680867064 instance=ExtResource("2_g5cw1")]
+position = Vector2(1237, 356)
+
+[node name="Spike42" parent="StaticBody2D" unique_id=236339070 instance=ExtResource("2_g5cw1")]
+position = Vector2(1267, 356)
+
+[node name="Spike43" parent="StaticBody2D" unique_id=705773207 instance=ExtResource("2_g5cw1")]
+position = Vector2(1297, 356)
+
+[node name="Spike44" parent="StaticBody2D" unique_id=1383917011 instance=ExtResource("2_g5cw1")]
+position = Vector2(1327, 356)
+
+[node name="Spike45" parent="StaticBody2D" unique_id=1148891271 instance=ExtResource("2_g5cw1")]
+position = Vector2(1357, 356)
+
+[node name="Spike46" parent="StaticBody2D" unique_id=1962785278 instance=ExtResource("2_g5cw1")]
+position = Vector2(1387, 356)
+
+[node name="Spike47" parent="StaticBody2D" unique_id=1101318434 instance=ExtResource("2_g5cw1")]
+position = Vector2(1417, 356)
+
+[node name="Spike48" parent="StaticBody2D" unique_id=1844556486 instance=ExtResource("2_g5cw1")]
+position = Vector2(1447, 356)
+
+[node name="Spike49" parent="StaticBody2D" unique_id=754604865 instance=ExtResource("2_g5cw1")]
+position = Vector2(1476, 357)
+
+[node name="Spike50" parent="StaticBody2D" unique_id=1542482623 instance=ExtResource("2_g5cw1")]
+position = Vector2(1506, 357)
+
+[node name="Spike51" parent="StaticBody2D" unique_id=2091740687 instance=ExtResource("2_g5cw1")]
+position = Vector2(1536, 357)
+
+[node name="Spike52" parent="StaticBody2D" unique_id=2017515972 instance=ExtResource("2_g5cw1")]
+position = Vector2(1566, 357)
+
+[node name="Spike53" parent="StaticBody2D" unique_id=312223736 instance=ExtResource("2_g5cw1")]
+position = Vector2(1596, 357)
+
+[node name="Spike54" parent="StaticBody2D" unique_id=695681948 instance=ExtResource("2_g5cw1")]
+position = Vector2(1626, 357)
+
+[node name="Spike55" parent="StaticBody2D" unique_id=736701350 instance=ExtResource("2_g5cw1")]
+position = Vector2(1656, 357)
+
+[node name="Spike56" parent="StaticBody2D" unique_id=181669334 instance=ExtResource("2_g5cw1")]
+position = Vector2(1686, 357)
+
+[node name="Spike57" parent="StaticBody2D" unique_id=1620475369 instance=ExtResource("2_g5cw1")]
+position = Vector2(1702, 357)
+
+[node name="Spike58" parent="StaticBody2D" unique_id=968698092 instance=ExtResource("2_g5cw1")]
+position = Vector2(1732, 357)
+
+[node name="Spike59" parent="StaticBody2D" unique_id=1367587065 instance=ExtResource("2_g5cw1")]
+position = Vector2(1762, 357)
+
+[node name="Spike60" parent="StaticBody2D" unique_id=758065547 instance=ExtResource("2_g5cw1")]
+position = Vector2(1792, 357)
+
+[node name="Spike61" parent="StaticBody2D" unique_id=1113998724 instance=ExtResource("2_g5cw1")]
+position = Vector2(1822, 357)
+
+[node name="Spike62" parent="StaticBody2D" unique_id=65916848 instance=ExtResource("2_g5cw1")]
+position = Vector2(1852, 357)
+
+[node name="Spike63" parent="StaticBody2D" unique_id=2075828376 instance=ExtResource("2_g5cw1")]
+position = Vector2(1882, 357)
+
+[node name="Spike64" parent="StaticBody2D" unique_id=2135920286 instance=ExtResource("2_g5cw1")]
+position = Vector2(1912, 357)
+
+[node name="Spike65" parent="StaticBody2D" unique_id=2133406881 instance=ExtResource("2_g5cw1")]
+position = Vector2(1928, 356)
+
+[node name="Spike66" parent="StaticBody2D" unique_id=430350690 instance=ExtResource("2_g5cw1")]
+position = Vector2(1958, 356)
+
+[node name="Spike67" parent="StaticBody2D" unique_id=898545257 instance=ExtResource("2_g5cw1")]
+position = Vector2(1988, 356)
+
+[node name="Spike68" parent="StaticBody2D" unique_id=1782598444 instance=ExtResource("2_g5cw1")]
+position = Vector2(2018, 356)
+
+[node name="Spike69" parent="StaticBody2D" unique_id=1360708135 instance=ExtResource("2_g5cw1")]
+position = Vector2(2048, 356)
+
+[node name="Spike70" parent="StaticBody2D" unique_id=2068398519 instance=ExtResource("2_g5cw1")]
+position = Vector2(2078, 356)
+
+[node name="Spike71" parent="StaticBody2D" unique_id=1507891158 instance=ExtResource("2_g5cw1")]
+position = Vector2(2108, 356)
+
+[node name="Spike72" parent="StaticBody2D" unique_id=1960138259 instance=ExtResource("2_g5cw1")]
+position = Vector2(2138, 356)
+
+[node name="Spike73" parent="StaticBody2D" unique_id=138554515 instance=ExtResource("2_g5cw1")]
+position = Vector2(2154, 356)
+
+[node name="Spike74" parent="StaticBody2D" unique_id=923150549 instance=ExtResource("2_g5cw1")]
+position = Vector2(2184, 356)
+
+[node name="Spike75" parent="StaticBody2D" unique_id=356730589 instance=ExtResource("2_g5cw1")]
+position = Vector2(2214, 356)
+
+[node name="Spike76" parent="StaticBody2D" unique_id=1886834751 instance=ExtResource("2_g5cw1")]
+position = Vector2(2244, 356)
+
+[node name="MovingPlatform" parent="StaticBody2D" unique_id=2039460716 instance=ExtResource("3_76ybr")]
+position = Vector2(178, -110)
+curve = SubResource("Curve2D_myvba")
+
+[node name="MovingPlatform2" type="Path2D" parent="StaticBody2D" unique_id=1727860617]
+position = Vector2(694, -166)
+curve = SubResource("Curve2D_76ybr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="StaticBody2D/MovingPlatform2" unique_id=1464455091]
+rotation = -0.8481177
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="StaticBody2D/MovingPlatform2/PathFollow2D" unique_id=1627426785]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="StaticBody2D/MovingPlatform2" unique_id=265563187]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/MovingPlatform2/AnimatableBody2D" unique_id=1950050218]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/MovingPlatform2/AnimatableBody2D" unique_id=1555084268]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D/MovingPlatform2" unique_id=333635900]
+libraries/ = SubResource("AnimationLibrary_tdwu5")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="Ice" parent="StaticBody2D" unique_id=893415496 instance=ExtResource("4_vwg62")]
+position = Vector2(1387, -597)
+scale = Vector2(3.4236333, 0.44459397)
+
+[node name="Spike78" parent="StaticBody2D" unique_id=1566179356 instance=ExtResource("5_qf6rc")]
+position = Vector2(1545, -632)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D" unique_id=1001676171]
+position = Vector2(1558.0001, -682)
+scale = Vector2(3.4000025, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/StaticBody2D2" unique_id=118485376]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D2" unique_id=153937551]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bjtu1")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D" unique_id=1323774350]
+position = Vector2(2559.0002, -2257)
+scale = Vector2(3.4000025, 68.16001)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/StaticBody2D4" unique_id=25712409]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D4" unique_id=1568415518]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bjtu1")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D" unique_id=663776773]
+position = Vector2(2830.0002, 1291)
+rotation = -1.5707964
+scale = Vector2(4.5225644, -17.1511)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/StaticBody2D5" unique_id=293159557]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D5" unique_id=1450697899]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bjtu1")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="StaticBody2D" unique_id=1448760657]
+position = Vector2(678.99994, 1294.0001)
+rotation = -1.5707964
+scale = Vector2(4.6545153, -17.08316)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/StaticBody2D6" unique_id=791724648]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D6" unique_id=812610588]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bjtu1")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D" unique_id=963530838]
+position = Vector2(1656, -769)
+scale = Vector2(3.4000025, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/StaticBody2D3" unique_id=729376682]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D3" unique_id=1850723640]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bjtu1")
+
+[node name="Label" type="Label" parent="StaticBody2D" unique_id=1681004715]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 1071.0
+offset_top = -749.0
+offset_right = 1200.0
+offset_bottom = -726.0
+text = "Be Careful Of Ice"
+
+[node name="Spike79" parent="StaticBody2D" unique_id=1692933300 instance=ExtResource("5_qf6rc")]
+position = Vector2(2018, 1284)
+scale = Vector2(4, 4)
+
+[node name="Spike80" parent="StaticBody2D" unique_id=1712507503 instance=ExtResource("5_qf6rc")]
+position = Vector2(1897, 1284)
+scale = Vector2(4, 4)
+
+[node name="Spike81" parent="StaticBody2D" unique_id=886821391 instance=ExtResource("5_qf6rc")]
+position = Vector2(1777, 1284)
+scale = Vector2(4, 4)
+
+[node name="Spike82" parent="StaticBody2D" unique_id=1931645471 instance=ExtResource("5_qf6rc")]
+position = Vector2(1656, 1284)
+scale = Vector2(4, 4)
+
+[node name="Spike83" parent="StaticBody2D" unique_id=1004271769 instance=ExtResource("5_qf6rc")]
+position = Vector2(1538, 1286)
+scale = Vector2(4, 4)
+
+[node name="Spike84" parent="StaticBody2D" unique_id=754509670 instance=ExtResource("5_qf6rc")]
+position = Vector2(1417, 1286)
+scale = Vector2(4, 4)
+
+[node name="Spike85" parent="StaticBody2D" unique_id=1067148156 instance=ExtResource("5_qf6rc")]
+position = Vector2(1297, 1286)
+scale = Vector2(4, 4)
+
+[node name="Spike86" parent="StaticBody2D" unique_id=820870459 instance=ExtResource("5_qf6rc")]
+position = Vector2(1176, 1286)
+scale = Vector2(4, 4)
+
+[node name="Spike87" parent="StaticBody2D" unique_id=1299289924 instance=ExtResource("5_qf6rc")]
+position = Vector2(1041, 1288)
+scale = Vector2(4, 4)
+
+[node name="Spike88" parent="StaticBody2D" unique_id=611428447 instance=ExtResource("5_qf6rc")]
+position = Vector2(921, 1288)
+scale = Vector2(4, 4)
+
+[node name="Spike89" parent="StaticBody2D" unique_id=270602656 instance=ExtResource("5_qf6rc")]
+position = Vector2(800, 1288)
+scale = Vector2(4, 4)
+
+[node name="MovingPlatform" type="Path2D" parent="." unique_id=106696585]
+position = Vector2(1492, 1117)
+curve = SubResource("Curve2D_5e78q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform" unique_id=1350562341]
+rotation = 0.010394637
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform/PathFollow2D" unique_id=904561907]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform" unique_id=831555288]
+scale = Vector2(1.6717492, 1.1656672)
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform/AnimatableBody2D" unique_id=1712229239]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D" unique_id=1321020072]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_qf6rc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform" unique_id=1746389918]
+libraries/ = SubResource("AnimationLibrary_l4wr6")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="MovingPlatform2" type="Path2D" parent="." unique_id=1835657885]
+position = Vector2(1237, 1117)
+curve = SubResource("Curve2D_53xsp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform2" unique_id=1452992375]
+rotation = -1.5707964
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform2/PathFollow2D" unique_id=1452515400]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform2" unique_id=961224233]
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform2/AnimatableBody2D" unique_id=948098775]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform2/AnimatableBody2D" unique_id=957421452]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform2" unique_id=905816863]
+libraries/ = SubResource("AnimationLibrary_tdwu5")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="MovingPlatform3" type="Path2D" parent="." unique_id=1071299393]
+position = Vector2(965, 1115)
+curve = SubResource("Curve2D_qf6rc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform3" unique_id=1697020034]
+position = Vector2(-18, -400)
+rotation = 1.5881213
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform3/PathFollow2D" unique_id=221549855]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform3" unique_id=1532459879]
+position = Vector2(-18, -400)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform3/AnimatableBody2D" unique_id=1080925442]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform3/AnimatableBody2D" unique_id=618112554]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform3" unique_id=271955661]
+libraries/ = SubResource("AnimationLibrary_tdwu5")
+autoplay = &"moving"
+speed_scale = 0.5
+
+[node name="EscapeDoor" parent="." unique_id=1283603974 instance=ExtResource("6_qf6rc")]
+position = Vector2(260, 1043)
+target_scene = ExtResource("7_53xsp")
+
+[node name="KillBox" parent="." unique_id=1719539855 instance=ExtResource("8_5e78q")]
+position = Vector2(435, 2157)
+scale = Vector2(802.0517, -53.58356)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1601719098]
+stream = ExtResource("9_l4wr6")
+autoplay = true
+parameters/looping = false

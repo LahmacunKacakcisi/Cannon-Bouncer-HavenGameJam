@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://b8o1oxrt47ud2"]
+
+[ext_resource type="PackedScene" uid="uid://bsrh3vdfwgqym" path="res://Scenes/player.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://cbpyn103vcwjp" path="res://Scenes/escape_door.tscn" id="2_8ffim"]
+[ext_resource type="PackedScene" uid="uid://4xrsh2w66myu" path="res://Scenes/level_2.tscn" id="3_xfk5q"]
+[ext_resource type="AudioStream" uid="uid://da52r5p2eqbhq" path="res://Assets/arpmedia-retro-arcade-game-music-577821.mp3" id="4_7p6j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32i32"]
+
+[node name="Level1" type="Node2D" unique_id=1995982570]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1333086872]
+position = Vector2(3, 414)
+scale = Vector2(10.880329, -4.098342)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=71735355]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1692867300]
+scale = Vector2(10.000001, 10)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=783354985]
+position = Vector2(-706.00006, -229.00002)
+rotation = 1.5707964
+scale = Vector2(4.298055, -2.8583426)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=1496637692]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=666187221]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=982527983]
+position = Vector2(759, -222.99998)
+rotation = 1.5707964
+scale = Vector2(4.298055, -3.3578267)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3" unique_id=1547610104]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=545858338]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="Player" parent="." unique_id=832507766 groups=["player"] instance=ExtResource("1_vk57k")]
+position = Vector2(-367, -12)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=75358607]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -405.0
+offset_top = -160.0
+offset_right = -205.0
+offset_bottom = -63.0
+text = "You Can Move By Firing Your Cannon with Left Click
+                      -->"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=224085451]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -52.0
+offset_top = -145.0
+offset_right = 144.0
+offset_bottom = -66.0
+text = "Your Bullets Reolad after
+every 1 seconds when you are grounded"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=2059772554]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 232.0
+offset_top = -159.0
+offset_right = 428.0
+offset_bottom = -80.0
+text = "You can go to the next level by using green doors"
+
+[node name="EscapeDoor" parent="." unique_id=1283603974 instance=ExtResource("2_8ffim")]
+position = Vector2(368.00003, -66)
+target_scene = ExtResource("3_xfk5q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=513261627]
+stream = ExtResource("4_7p6j4")
+autoplay = true
+parameters/looping = false

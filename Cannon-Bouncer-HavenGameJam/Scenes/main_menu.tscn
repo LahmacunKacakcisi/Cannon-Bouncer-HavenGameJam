@@ -1,0 +1,493 @@
+[gd_scene format=3 uid="uid://cqf7o2fgpeng1"]
+
+[ext_resource type="AudioStream" uid="uid://ccthg4ysu4kjx" path="res://Assets/14. Welcome to the Green Room (DELTARUNE Chapter 3+4 Soundtrack) - Toby Fox.mp3" id="1_28flt"]
+[ext_resource type="Script" uid="uid://cwmcxf5gfnhbs" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+
+[node name="Main Menu" type="Control" unique_id=58948399]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1710870618]
+z_index = -5
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.16781414, 0.91025007, 0.47017902, 1)
+
+[node name="Stars" type="Node2D" parent="." unique_id=1304886945]
+
+[node name="Polygon2D" type="Polygon2D" parent="Stars" unique_id=362527357]
+position = Vector2(-1188.6001, 703)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D" unique_id=107751428]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars" unique_id=1954385975]
+position = Vector2(-1082.6001, 704)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D2" unique_id=1817045550]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Stars" unique_id=30396116]
+position = Vector2(-984.2002, 702.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D3" unique_id=1511228221]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Stars" unique_id=1298808715]
+position = Vector2(-878.2002, 703.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D4" unique_id=2068633129]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Stars" unique_id=443525980]
+position = Vector2(-769.2002, 705)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D5" unique_id=1408857828]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Stars" unique_id=1746245360]
+position = Vector2(-663.2002, 706)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D6" unique_id=598633193]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Stars" unique_id=716997843]
+position = Vector2(-564.8003, 704.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D7" unique_id=291817540]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Stars" unique_id=935511354]
+position = Vector2(-458.8003, 705.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D8" unique_id=925727599]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Stars" unique_id=308513983]
+position = Vector2(-376.2002, 707)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D9" unique_id=1742779029]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Stars" unique_id=1716980084]
+position = Vector2(-270.2002, 708)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D10" unique_id=988179251]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Stars" unique_id=1234743381]
+position = Vector2(-171.8003, 706.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D11" unique_id=1688242019]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Stars" unique_id=967979525]
+position = Vector2(-65.80029, 707.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D12" unique_id=899777565]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D13" type="Polygon2D" parent="Stars" unique_id=540832402]
+position = Vector2(43.199707, 709)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D13" unique_id=95221172]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D14" type="Polygon2D" parent="Stars" unique_id=294066250]
+position = Vector2(149.1997, 710)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D14" unique_id=1839458332]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D15" type="Polygon2D" parent="Stars" unique_id=814085437]
+position = Vector2(247.59961, 708.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D15" unique_id=1526782512]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D16" type="Polygon2D" parent="Stars" unique_id=1311792860]
+position = Vector2(353.5996, 709.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D16" unique_id=136875335]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D17" type="Polygon2D" parent="Stars" unique_id=874263447]
+position = Vector2(452, 709)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D17" unique_id=905004970]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D18" type="Polygon2D" parent="Stars" unique_id=992039457]
+position = Vector2(534.3999, 710.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D18" unique_id=1991635251]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D19" type="Polygon2D" parent="Stars" unique_id=69284167]
+position = Vector2(640.3999, 711.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D19" unique_id=288483162]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D20" type="Polygon2D" parent="Stars" unique_id=996332967]
+position = Vector2(738.8003, 711)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars/Polygon2D20" unique_id=1152947439]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Stars2" type="Node2D" parent="." unique_id=2086011621]
+position = Vector2(7, -988)
+
+[node name="Polygon2D" type="Polygon2D" parent="Stars2" unique_id=1066158985]
+position = Vector2(-1188.6001, 703)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D" unique_id=493125443]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2" unique_id=1127391663]
+position = Vector2(-1082.6001, 704)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D2" unique_id=1557456915]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Stars2" unique_id=1667876548]
+position = Vector2(-984.2002, 702.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D3" unique_id=924014427]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Stars2" unique_id=1305681055]
+position = Vector2(-878.2002, 703.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D4" unique_id=1550700947]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Stars2" unique_id=1439222752]
+position = Vector2(-769.2002, 705)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D5" unique_id=1979450295]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Stars2" unique_id=422108974]
+position = Vector2(-663.2002, 706)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D6" unique_id=1607690151]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Stars2" unique_id=1075458841]
+position = Vector2(-564.8003, 704.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D7" unique_id=384664093]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Stars2" unique_id=414289121]
+position = Vector2(-458.8003, 705.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D8" unique_id=1704035944]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Stars2" unique_id=385169620]
+position = Vector2(-376.2002, 707)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D9" unique_id=643292974]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Stars2" unique_id=1807726499]
+position = Vector2(-270.2002, 708)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D10" unique_id=108411466]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Stars2" unique_id=666613149]
+position = Vector2(-171.8003, 706.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D11" unique_id=390412250]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Stars2" unique_id=1323245414]
+position = Vector2(-65.80029, 707.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D12" unique_id=2127250677]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D13" type="Polygon2D" parent="Stars2" unique_id=1641761401]
+position = Vector2(43.199707, 709)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D13" unique_id=26343632]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D14" type="Polygon2D" parent="Stars2" unique_id=1348215881]
+position = Vector2(149.1997, 710)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D14" unique_id=1940705278]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D15" type="Polygon2D" parent="Stars2" unique_id=1268351191]
+position = Vector2(247.59961, 708.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D15" unique_id=278913508]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D16" type="Polygon2D" parent="Stars2" unique_id=497787606]
+position = Vector2(353.5996, 709.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D16" unique_id=1986017695]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D17" type="Polygon2D" parent="Stars2" unique_id=1819517647]
+position = Vector2(452, 709)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D17" unique_id=1072706033]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D18" type="Polygon2D" parent="Stars2" unique_id=1159695780]
+position = Vector2(534.3999, 710.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D18" unique_id=770070226]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D19" type="Polygon2D" parent="Stars2" unique_id=1880720228]
+position = Vector2(640.3999, 711.4)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D19" unique_id=2060251573]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D20" type="Polygon2D" parent="Stars2" unique_id=595859002]
+position = Vector2(738.8003, 711)
+scale = Vector2(0.6, 0.6)
+color = Color(0.09360776, 0.4831034, 0.24407315, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stars2/Polygon2D20" unique_id=625972395]
+position = Vector2(11.66687, -1.666687)
+color = Color(0.53412783, 0.9395707, 0.48677072, 1)
+polygon = PackedVector2Array(2023, 508, 2044, 471, 2069, 511, 2107, 517, 2077, 542, 2085, 583, 2046, 558, 2009, 586, 2014, 544, 1981, 521)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1662315526]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 72.0
+offset_right = 1471.0
+offset_bottom = 644.0
+bbcode_enabled = true
+text = "[font_size=200] CANNON BOUNCER"
+
+[node name="Button" type="Button" parent="." unique_id=1988761806]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 684.0
+offset_right = 872.0
+offset_bottom = 749.0
+scale = Vector2(3.08963, 2.7082272)
+text = "Press to play"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1239835299]
+stream = ExtResource("1_28flt")
+autoplay = true
+parameters/looping = false
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

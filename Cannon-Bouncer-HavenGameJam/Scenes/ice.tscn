@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bxppmplke58qp"]
+
+[ext_resource type="Script" uid="uid://blsosm2l5dmmg" path="res://Scripts/ice.gd" id="1_fse5i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32i32"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjtu1"]
+size = Vector2(108, 109)
+
+[node name="Ice" type="StaticBody2D" unique_id=893415496]
+script = ExtResource("1_fse5i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1558569068]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.39875868, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924344892]
+shape = SubResource("RectangleShape2D_32i32")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=298801627]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1278112801]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_bjtu1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

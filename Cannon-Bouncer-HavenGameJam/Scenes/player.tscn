@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bsrh3vdfwgqym"]
+
+[ext_resource type="Script" uid="uid://chnx7nlyr71r3" path="res://Scripts/player.gd" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://c28kxfauxtujt" path="res://Scripts/rich_text_label.gd" id="3_sweqy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32i32"]
+
+[node name="Player" type="CharacterBody2D" unique_id=832507766]
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_max_angle = 0.28274333
+script = ExtResource("1_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171939794]
+shape = SubResource("CapsuleShape2D_32i32")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=207565839]
+offset_left = -7.9999995
+offset_top = -14.0
+offset_right = 23.360233
+offset_bottom = 64.13684
+scale = Vector2(0.5102003, 0.34554762)
+color = Color(0, 0.97814435, 1, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=813285113]
+
+[node name="Gun" type="Node2D" parent="." unique_id=463792032]
+
+[node name="ColorRect" type="ColorRect" parent="Gun" unique_id=815556117]
+offset_top = -1.0
+offset_right = 38.0
+offset_bottom = 1.0
+color = Color(0.427493, 0.42749307, 0.42749307, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=379880002]
+zoom = Vector2(2, 2)
+
+[node name="UI" type="Control" parent="Camera2D" unique_id=275519221]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -284.0
+offset_top = -161.0
+offset_right = 291.0
+offset_bottom = 162.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/UI" unique_id=1439609213]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+z_index = 5
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 41.0
+offset_bottom = 42.0
+script = ExtResource("3_sweqy")

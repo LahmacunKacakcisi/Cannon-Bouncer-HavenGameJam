@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckrkvnv7mdffr"]
+
+[ext_resource type="AudioStream" uid="uid://da52r5p2eqbhq" path="res://Assets/arpmedia-retro-arcade-game-music-577821.mp3" id="1_5j2cu"]
+
+[node name="End" type="Node2D" unique_id=545235785]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1947901669]
+modulate = Color(0, 0, 0, 1)
+offset_left = 231.0
+offset_top = 109.00003
+offset_right = 1375.2206
+offset_bottom = 934.093
+scale = Vector2(1.2939283, 0.9514079)
+bbcode_enabled = true
+text = "[font_size=200] Thank You For Playing
+(The End)"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1464855875]
+stream = ExtResource("1_5j2cu")
+autoplay = true
+parameters/looping = false
